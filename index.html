@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organic Chemistry Mechanism Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Main Header -->
+        <header>
+            <h1>🧪 Organic Reaction Mechanism Hub</h1>
+            <p>Substitution & Elimination ($S_N1, S_N2, E1, E2$) Interactive Learning Platform</p>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="nav-tabs">
+            <button class="tab-btn active" data-tab="predictor">🌳 Reaction Predictor</button>
+            <button class="tab-btn" data-tab="visualizer">🔬 Mechanism Visualizer</button>
+            <button class="tab-btn" data-tab="quiz">🧠 Interactive Quiz Bot</button>
+        </nav>
+
+        <!-- TAB 1: PREDICTOR -->
+        <section id="predictor" class="tab-content active">
+            <div class="card">
+                <h2>Reaction Condition Selection</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="substrate">Substrate ($R-X$):</label>
+                        <select id="substrate">
+                            <option value="methyl">Methyl ($CH_3-X$)</option>
+                            <option value="primary">Primary ($1^\circ$ Alkyl Halide)</option>
+                            <option value="secondary" selected>Secondary ($2^\circ$ Alkyl Halide)</option>
+                            <option value="tertiary">Tertiary ($3^\circ$ Alkyl Halide)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nucleophile">Nucleophile / Base:</label>
+                        <select id="nucleophile">
+                            <option value="strong_base_strong_nuc">Strong Base / Strong Nuc ($OH^-, RO^-$)</option>
+                            <option value="strong_base_bulky">Strong Bulky Base ($t-BuO^-$)</option>
+                            <option value="weak_base_strong_nuc">Weak Base / Strong Nuc ($I^-, Br^-, RS^-, CN^-$)</option>
+                            <option value="weak_base_weak_nuc" selected>Weak Base / Weak Nuc ($H_2O, EtOH$)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="solvent">Solvent:</label>
+                        <select id="solvent">
+                            <option value="protic" selected>Polar Protic ($H_2O, EtOH, MeOH$)</option>
+                            <option value="aprotic">Polar Aprotic ($DMSO, DMF, Acetone$)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="temp">Temperature:</label>
+                        <select id="temp">
+                            <option value="room">Room Temperature ($25^\circ C$)</option>
+                            <option value="heat">High Temperature ($\Delta$ Heat)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button id="predict-btn" class="btn-primary">Predict Mechanism 🚀</button>
+
+                <!-- Result Display -->
+                <div id="prediction-result" class="result-box hidden">
+                    <div class="result-header">
+                        <h3>Major Pathway: <span id="major-path" class="badge"></span></h3>
+                        <p>Minor Pathway: <span id="minor-path"></span></p>
+                    </div>
+                    <div class="result-details">
+                        <p><strong>Rate Law:</strong> <span id="rate-law"></span></p>
+                        <p><strong>Stereochemistry:</strong> <span id="stereochem"></span></p>
+                        <p><strong>Rationale:</strong> <span id="rationale"></span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: VISUALIZER -->
+        <section id="visualizer" class="tab-content">
+            <div class="card">
+                <h2>Step-by-Step Reaction Mechanism</h2>
+                <div class="mechanism-selector">
+                    <button class="mech-btn active" data-mech="SN2">S_N2 Mechanism</button>
+                    <button class="mech-btn" data-mech="SN1">S_N1 Mechanism</button>
+                    <button class="mech-btn" data-mech="E2">E2 Mechanism</button>
+                    <button class="mech-btn" data-mech="E1">E1 Mechanism</button>
+                </div>
+
+                <div class="visualizer-display">
+                    <div class="step-controls">
+                        <button id="prev-step-btn" class="btn-secondary" disabled>← Previous Step</button>
+                        <span id="step-indicator">Step 1 of 1</span>
+                        <button id="next-step-btn" class="btn-secondary">Next Step →</button>
+                    </div>
+
+                    <div id="svg-canvas" class="svg-canvas">
+                        <!-- SVG Diagram renders dynamically -->
+                    </div>
+
+                    <div class="step-explanation">
+                        <h4 id="step-title">Step Title</h4>
+                        <p id="step-desc">Step Description</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 3: QUIZ BOT -->
+        <section id="quiz" class="tab-content">
+            <div class="card">
+                <div class="quiz-header">
+                    <h2>Organic Chemistry Quiz Bot</h2>
+                    <div class="score-board">Score: <span id="score-val">0</span> / <span id="total-val">0</span></div>
+                </div>
+
+                <div id="quiz-card" class="quiz-card">
+                    <h3 id="quiz-question">Loading Question...</h3>
+                    <div id="quiz-options" class="options-grid"></div>
+                    <div id="quiz-feedback" class="feedback-box hidden"></div>
+                    <button id="next-quiz-btn" class="btn-primary hidden">Next Question ➔</button>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Organic Reaction Mechanism Hub © 2026 | Designed for Applied Chemistry Course Work</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
