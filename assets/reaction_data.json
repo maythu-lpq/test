@@ -1,1 +1,52 @@
-
+{
+  "project_info": {
+    "title": "Organic Chemistry Reaction Mechanism Hub",
+    "version": "1.0.0",
+    "course": "Applied Chemistry - Organic Reactions"
+  },
+  "mechanisms": [
+    {
+      "id": "SN2",
+      "name": "Bimolecular Nucleophilic Substitution (S_N2)",
+      "kinetics": "Second-order: Rate = k[Substrate][Nucleophile]",
+      "stereochemistry": "180° Backside attack, 100% Inversion of Configuration",
+      "preferred_substrate": "Methyl > 1° > 2° (3° does not react)",
+      "preferred_nucleophile": "Strong, unhindered nucleophile (e.g., OH-, I-, CN-)",
+      "preferred_solvent": "Polar Aprotic (e.g., DMSO, DMF, Acetone)",
+      "intermediate": "Concerted transition state (No carbocation intermediate)"
+    },
+    {
+      "id": "SN1",
+      "name": "Unimolecular Nucleophilic Substitution (S_N1)",
+      "kinetics": "First-order: Rate = k[Substrate]",
+      "stereochemistry": "Racemization (Retention + Inversion mixture)",
+      "preferred_substrate": "3° > 2° (1° and Methyl do not react)",
+      "preferred_nucleophile": "Weak nucleophile / Solvolysis (e.g., H2O, EtOH)",
+      "preferred_solvent": "Polar Protic (e.g., H2O, MeOH, EtOH)",
+      "intermediate": "Planar Carbocation Intermediate"
+    },
+    {
+      "id": "E2",
+      "name": "Bimolecular Elimination (E2)",
+      "kinetics": "Second-order: Rate = k[Substrate][Base]",
+      "stereochemistry": "Anti-periplanar geometry required for H and X",
+      "preferred_substrate": "3° > 2° > 1°",
+      "preferred_base": "Strong Base (e.g., OH-, RO-, t-BuO-)",
+      "preferred_product": "Zaitsev Alkene (Most substituted) or Hofmann Alkene (Bulky base)",
+      "intermediate": "Concerted transition state"
+    },
+    {
+      "id": "E1",
+      "name": "Unimolecular Elimination (E1)",
+      "kinetics": "First-order: Rate = k[Substrate]",
+      "stereochemistry": "Zaitsev Alkene preferred (E-isomer more stable)",
+      "preferred_substrate": "3° > 2° (competitively favors E1 with Heat)",
+      "preferred_base": "Weak Base (e.g., H2O, EtOH with Heat Δ)",
+      "intermediate": "Carbocation Intermediate (Can undergo rearrangement)"
+    }
+  ],
+  "solvents": {
+    "polar_protic": ["H2O", "EtOH", "MeOH", "CH3COOH"],
+    "polar_aprotic": ["DMSO", "DMF", "Acetone", "ACN"]
+  }
+}
