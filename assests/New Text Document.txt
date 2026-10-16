@@ -1,0 +1,18 @@
+[Specification Document / 規格書]
+Project Title: Interactive AI Persona Web App
+Description: A responsive interactive web application built with Vibe Coding principles.
+
+1. Technical Stack:
+   - HTML5 for semantics and content layout.
+   - CSS3 (Flexbox/Grid, CSS Variables, Animations).
+   - JavaScript (ES6+, DOM Manipulation, Event Listeners).
+
+2. UI/UX Requirements:
+   - Modern Dark Mode Theme with Neon Accent Colors (#6c5ce7, #00cec9).
+   - Fully Responsive Layout (Desktop and Mobile compatibility).
+   - Interactive Card elements and Input field for user feedback.
+
+3. Functional Specifications:
+   - Dynamic message display with automated response logic.
+   - Smooth transition animations on UI state changes.
+   - Error handling for empty user inputs.
